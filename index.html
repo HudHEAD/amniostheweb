@@ -249,6 +249,7 @@
     gap: 1rem;
   }
   .edu-card {
+    position: relative;
     border: 1px solid rgba(255,255,255,0.15);
     background: rgba(255,255,255,0.04);
     padding: 1.4rem 1.5rem;
@@ -292,6 +293,22 @@
     text-transform: uppercase;
   }
 
+  .soon-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #fff;
+    color: #111;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.25);
+  }
+
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity:0; transform:translateY(20px); }
@@ -326,6 +343,8 @@
   <button class="lang-btn active" onclick="setLang('en')">EN</button>
   <button class="lang-btn" onclick="setLang('fr')">FR</button>
   <button class="lang-btn" onclick="setLang('es')">ES</button>
+  <button class="lang-btn" onclick="setLang('it')">IT</button>
+  <button class="lang-btn" onclick="setLang('de')">DE</button>
 </div>
 
 <!-- ══ PAGE 1: HOME ══ -->
@@ -339,7 +358,7 @@
           <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><polygon points="2,1 11,6 2,11"/></svg>
           <span data-i18n="play">Play</span>
         </a>
-        <span style="position:absolute;top:-10px;right:-10px;background:#fff;color:#111;font-size:0.58rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 6px;border-radius:20px;white-space:nowrap;box-shadow:0 1px 6px rgba(0,0,0,0.25);">Soon</span>
+        <span class="soon-badge" data-i18n="soon">Soon</span>
       </div>
       <a href="#" class="btn">Steam</a>
       <a href="https://amnios-thegame.itch.io/amnios" target="_blank" class="btn">itch.io</a>
@@ -396,6 +415,7 @@
     <p class="info-section-title" data-i18n="eduResources">Educational Resources</p>
     <div class="edu-grid">
       <a href="#" class="edu-card">
+        <span class="soon-badge" data-i18n="soon">Soon</span>
         <div class="edu-title" data-i18n="level1ages">12–14 years</div>
         <div class="edu-dl">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -403,6 +423,7 @@
         </div>
       </a>
       <a href="#" class="edu-card">
+        <span class="soon-badge" data-i18n="soon">Soon</span>
         <div class="edu-title" data-i18n="level2ages">14–16 years</div>
         <div class="edu-dl">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -410,6 +431,7 @@
         </div>
       </a>
       <a href="#" class="edu-card">
+        <span class="soon-badge" data-i18n="soon">Soon</span>
         <div class="edu-title" data-i18n="level3ages">16–18 years</div>
         <div class="edu-dl">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -454,6 +476,7 @@ const T = {
     level2ages: "14–16 years",
     level3ages: "16–18 years",
     download: "Download PDF",
+    soon: "Soon",
     description: "Amnios is a puzzle game and interactive narrative exploring maternity as a vector of resilience within migratory journeys. Join three women in distinct geographical and political contexts: Nina, who crosses the Darién Gap while pregnant in search of a better life; Amani, who travels from the Democratic Republic of Congo to the Nakivale camps in Uganda to give birth; and Zlata, who seeks her place in Geneva while navigating her new responsibilities as a mother and her Ukrainian cultural heritage.",
   },
   fr: {
@@ -467,6 +490,7 @@ const T = {
     level2ages: "14–16 ans",
     level3ages: "16–18 ans",
     download: "Télécharger PDF",
+    soon: "Bientôt",
     description: "Amnios est un jeu de puzzle et un récit interactif abordant la maternité comme vecteur de résilience dans les parcours migratoires. Accompagnez trois femmes dans des contextes géographiques et politiques distincts: Nina qui traverse le bouchon du Darién enceinte en quête d'une vie meilleure, Amani qui voyage de la République démocratique du Congo vers les camps de Nakivale en Ouganda afin d'accoucher et Zlata qui cherche sa place à Genève tout en navigant entre ses nouvelles responsabilités de mère et son héritage culturel ukrainien.",
   },
   es: {
@@ -480,7 +504,36 @@ const T = {
     level2ages: "14–16 años",
     level3ages: "16–18 años",
     download: "Descargar PDF",
+    soon: "Pronto",
     description: "Amnios es un juego de puzles y un relato interactivo que aborda la maternidad como vector de resiliencia en los recorridos migratorios. Acompañe a tres mujeres en contextos geográficos y políticos distintos: Nina, que atraviesa el tapón del Darién embarazada en busca de una vida mejor; Amani, que viaja de la República Democrática del Congo a los campos de Nakivale en Uganda para dar a luz; y Zlata, que busca su lugar en Ginebra navegando entre sus nuevas responsabilidades de madre y su herencia cultural ucraniana.",
+  },
+  it: {
+    subtitle: "Tre donne. Un viaggio sconosciuto. Una nuova vita che prende forma.",
+    play: "Gioca", moreInfo: "+ Info", back: "Indietro",
+    aboutTitle: "Informazioni sul gioco",
+    projectBy: "Un progetto di",
+    partners: "Con il sostegno di",
+    eduResources: "Risorse Educative",
+    level1ages: "12–14 anni",
+    level2ages: "14–16 anni",
+    level3ages: "16–18 anni",
+    download: "Scarica PDF",
+    soon: "Presto",
+    description: "Amnios è un gioco di puzzle e una narrazione interattiva che esplora la maternità come vettore di resilienza nei percorsi migratori. Segui tre donne in contesti geografici e politici distinti: Nina, che attraversa il Tappo del Darién incinta in cerca di una vita migliore; Amani, che viaggia dalla Repubblica Democratica del Congo ai campi di Nakivale in Uganda per partorire; e Zlata, che cerca il proprio posto a Ginevra destreggiandosi tra le nuove responsabilità di madre e la sua eredità culturale ucraina.",
+  },
+  de: {
+    subtitle: "Drei Frauen. Eine unbekannte Reise. Ein neues Leben nimmt Gestalt an.",
+    play: "Spielen", moreInfo: "+ Info", back: "Zurück",
+    aboutTitle: "Über das Spiel",
+    projectBy: "Ein Projekt von",
+    partners: "Mit Unterstützung von",
+    eduResources: "Bildungsressourcen",
+    level1ages: "12–14 Jahre",
+    level2ages: "14–16 Jahre",
+    level3ages: "16–18 Jahre",
+    download: "PDF herunterladen",
+    soon: "Bald",
+    description: "Amnios ist ein Puzzlespiel und eine interaktive Erzählung, die Mutterschaft als Quelle von Resilienz auf Migrationswegen erkundet. Begleiten Sie drei Frauen in unterschiedlichen geografischen und politischen Kontexten: Nina, die schwanger die Darién-Lücke auf der Suche nach einem besseren Leben durchquert; Amani, die von der Demokratischen Republik Kongo zu den Nakivale-Lagern in Uganda reist, um dort zu entbinden; und Zlata, die in Genf ihren Platz sucht, während sie ihre neuen Aufgaben als Mutter und ihr ukrainisches kulturelles Erbe miteinander vereint.",
   }
 };
 
